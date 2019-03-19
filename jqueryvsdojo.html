@@ -1,0 +1,597 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>Anology.Script</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="apple-touch-icon" href="icon.png">
+  <!-- Place favicon.ico in the root directory -->
+  <link href="https://fonts.googleapis.com/css?family=Fira+Sans:400,500,800,900" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body class="font-fira">
+  <!--[if lte IE 9]>
+    <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+  <![endif]-->
+
+  <!-- Add your site or application content here -->
+  <header class="text-center pt-4 flex content-center items-center justify-center">
+
+                <div class="w-1/5 h-12 inline-flex items-center justify-center md:invisible">
+                    <div class="button_container" id="toggle">
+                        <span class="top"></span>
+                        <span class="middle"></span>
+                        <span class="bottom"></span>
+                      </div>
+                </div>
+                <div class="w-3/5 h-12 py-3">
+                    <a class="block text-black hover:text-black no-underline" href="index.html"><span class="text-2xl sm:text-3xl font-black">analogy <span class="font-medium">.script()</span></span></a>
+                </div>
+                <div class="w-1/5 h-12"></div>
+  </header>
+  <section class="overlay" id="overlay">
+    <nav class="overlay-menu">
+      <ul>
+        <li ><a href="#" class="font-medium border-b-2 border-black">Get Started</a></li>
+        <li><a href="#">Common Idioms</a></li>
+        <li><a href="#">Events</a></li>
+        <li><a href="#">Animations & Effects</a></li>
+        <li><a href="#">Selectors</a></li>
+        <li><a href="#">Array vs. NodeList</a></li>
+        <li><a href="#">Ajax</a></li>
+        <li><a href="#">CSS</a></li>
+        <li><a href="#">More...</a></li>
+      </ul>
+    </nav>
+</section>
+  <main class="container-block">
+    <h1 class="gr-gradient p-4 my-8 text-center"><span class="font-bold text-4xl text-white m-2 ">jQuery <span class="font-normal text-xl">2.1</span></span>
+        <span class="text-white font-normal text-2xl text-center">
+          vs
+        </span>
+        <span class="font-bold text-4xl m-2 text-right">dojo <span class="font-normal text-xl">1.7</span></span></h1>
+        <section class="p-4">
+            <section>
+                    <h4 class="text-xl font-medium">Getting Started</h4>
+                    <section>
+                            <div class="flex-wrap pt-10 text-center md:text-left md:border-b md:border-grey hidden md:flex">
+                                    <div class="w-full  md:w-1/4">
+                                        
+                                    </div>
+                                    <div class="w-full  md:w-1/5  mb-2 ">
+                                        <p class="text-jq-color text-lg text-left ">jQuery 2.1</p>
+                                        
+                                    </div>
+                                    <div class="w-full  md:w-1/5  mb-2 ">
+                                        <p class="text-dojo-color text-lg text-left ">dojo 1.7</p>
+                                    </div>
+                                    <div class="w-full  md:w-1/3  mb-2">
+                                        <p class="text-lg text-left mt-0 ">Notes</p>
+                                    </div>    
+                            </div>        
+                    <div class="flex flex-wrap pt-10 text-center md:text-left">
+                        <div class="w-full  md:w-1/4  mb-4  pb-2 md:text-left border-b border-grey">
+                            Global Objects and functions
+                        </div>
+                        <div class="w-full  md:w-1/5  mb-4 pb-4 md:border-b md:border-grey">
+                            <p class="text-jq-color text-lg text-left pb-4 block md:hidden">jQuery 2.1</p>
+                            <code>jQuery</code> 
+                            or
+                            <code class="text-jq-color">$</code>
+                        </div>
+                        <div class="w-full  md:w-1/5  mb-4 pb-4 md:border-b md:border-grey">
+                            <p class="text-dojo-color text-lg text-left pb-4 block md:hidden">dojo 1.7</p>
+                            <code class="text-dojo-color">dojo</code>
+                        </div>
+                        <div class="w-full  md:w-1/3  mb-4 pb-4 md:border-b md:border-grey text-left notes">
+                            <p class="text-lg text-left mt-0 pb-4 block md:hidden">Notes</p>
+                                    <p>jQuery provides a function which can be accessed by <code class="text-jq-color">jQuery</code> or <code class="text-jq-color">$</code> which can be used to access all the jQuery methods. Ideally it accepts CSS selectors, searches through the DOM for any elements that match the provided selector and creates a new jQuery object that references these elements.</p>
+                                    <p>Similarly <code class="text-dojo-color">dojo</code> has a object which has all the methods.</p>
+                                    
+                                    <p class="py-4">
+                                    <span class="rounded-full py-2 px-4 bg-black text-white text-xs">Important</span>
+                                    </p>
+                                    <p><span class="text-jq-color">jQuery</span> When we access an element with jquery say $(".bar") it returns a jquery object and not just the actual element, on which we can add methods through chaining to work upon.</p> 
+                                    <p><em>eg.</em> <code class="text-jq-color">$("bar").addClass("foo").removeClass("foe")</code>. And if we want to have only the DOM element, we have to do <code class="text-jq-color">$("bar").get(0)</code></p>
+                                    <p> If there are more than one element which matches the criteria jQuery will return an array</p>
+            
+                                    <p><span class="text-dojo-color">Dojo</span> However, DOJO will simply return the DOM element or an array in case we use <code class="text-dojo-color">dojo.query("bar")</code>, and it matches quite a few elements.</p>
+                                
+                        </div>
+                    </div>
+                    </section>
+                    <section>
+                            <div class="flex flex-wrap pt-10 text-center md:text-left">
+                                <div class="w-full  md:w-1/4  mb-4  pb-2 md:text-left border-b border-grey">
+                                    DOM Ready
+                                </div>
+                                <div class="w-full  md:w-1/5  mb-4 pb-4 md:border-b md:border-grey">
+                                    <p class="text-jq-color text-lg text-left pb-4 block md:hidden">jQuery 2.1</p>
+                                    
+    <pre><code class="text-jq-color">
+    $(document).ready(
+        function(){
+            // Your code here
+        }
+    );
+    </code></pre>
+                                </div>
+                                <div class="w-full  md:w-1/5  mb-4 pb-4 md:border-b md:border-grey">
+                                    <p class="text-dojo-color text-lg text-left pb-4 block md:hidden">dojo 1.7</p>
+    <pre><code class="text-dojo-color">
+    dojo.ready(
+        function () {
+        // Your code here
+    });
+    </code></pre>
+                                </div>
+                                <div class="w-full  md:w-1/3  mb-4 pb-4 md:border-b md:border-grey text-left notes">
+                                    <p class="text-lg text-left mt-0 pb-4 block md:hidden">Notes</p>
+                                    <p>Fires when DOM is ready</p>
+                                    <strong>jQuery Alternative Usage:</strong>
+    <pre><code class="text-jq-color">
+    $(function(){
+        // Your code here
+    });
+    </code></pre>
+                                        
+                                </div>
+                            </div>
+                            </section>
+            </section>
+            <section class="mt-10">
+                <h4 class="text-xl font-medium">Common Idioms
+                </h4>
+                <section>
+                        <div class="flex-wrap pt-10 text-center md:text-left md:border-b md:border-grey hidden md:flex">
+                                <div class="w-full  md:w-1/4">
+                                    
+                                </div>
+                                <div class="w-full  md:w-1/5  mb-2 ">
+                                    <p class="text-jq-color text-lg text-left ">jQuery 2.1</p>
+                                    
+                                </div>
+                                <div class="w-full  md:w-1/5  mb-2 ">
+                                    <p class="text-dojo-color text-lg text-left ">dojo 1.7</p>
+                                </div>
+                                <div class="w-full  md:w-1/3  mb-2">
+                                    <p class="text-lg text-left mt-0 ">Notes</p>
+                                </div>    
+                        </div>        
+                <div class="flex flex-wrap pt-10 text-center md:text-left">
+                    <div class="w-full  md:w-1/4  mb-4  pb-2 md:text-left border-b border-grey">
+                        Id Selector	
+                    </div>
+                    <div class="w-full  md:w-1/5  mb-4 pb-4 md:border-b md:border-grey">
+                        <p class="text-jq-color text-lg text-left pb-4 block md:hidden">jQuery 2.1</p>
+<code class="text-jq-color">
+    $("#bar")
+</code>
+                    </div>
+                    <div class="w-full  md:w-1/5  mb-4 pb-4 md:border-b md:border-grey">
+                        <p class="text-dojo-color text-lg text-left pb-4 block md:hidden">dojo 1.7</p>
+<code class="text-dojo-color">
+    dojo.byId("bar")
+</code>
+                    </div>
+                    <div class="w-full  md:w-1/3  mb-4 pb-4 md:border-b md:border-grey text-left notes">
+                        <p class="text-lg text-left mt-0 pb-4 block md:hidden">Notes</p>
+                                <p>
+                                    returns the element with id <em>bar</em>.
+                                </p>
+                                
+                            
+                    </div>
+                </div>
+                </section>
+                <section>
+                        <div class="flex flex-wrap pt-10 text-center md:text-left">
+                            <div class="w-full  md:w-1/4  mb-4  pb-2 md:text-left border-b border-grey">
+                                Class Selector
+                            </div>
+                            <div class="w-full  md:w-1/5  mb-4 pb-4 md:border-b md:border-grey">
+                                <p class="text-jq-color text-lg text-left pb-4 block md:hidden">jQuery 2.1</p>
+                                
+<code class="text-jq-color">
+    $(".foo")
+</code>
+                            </div>
+                            <div class="w-full  md:w-1/5  mb-4 pb-4 md:border-b md:border-grey">
+                                <p class="text-dojo-color text-lg text-left pb-4 block md:hidden">dojo 1.7</p>
+<code class="text-dojo-color">
+    dojo.byId("bar")
+</code>
+                            </div>
+                            <div class="w-full  md:w-1/3  mb-4 pb-4 md:border-b md:border-grey text-left notes">
+                                <p class="text-lg text-left mt-0 pb-4 block md:hidden">Notes</p>
+                                <p>Selects all the elements with class <em>foo</em>.</p>
+                                <p><code class="text-jq-color">$(".foo").length</code> & <code class="text-dojo-color">
+                                    dojo.query(".foo").length
+                                </code> gives the length of the elements present for the given condition.</p>
+                            </div>
+                        </div>
+                </section>
+                <section>
+                    <div class="flex flex-wrap pt-10 text-center md:text-left">
+                        <div class="w-full  md:w-1/4  mb-4  pb-2 md:text-left border-b border-grey">
+                            Element Selector
+                        </div>
+                        <div class="w-full  md:w-1/5  mb-4 pb-4 md:border-b md:border-grey">
+                            <p class="text-jq-color text-lg text-left pb-4 block md:hidden">jQuery 2.1</p>
+                            
+<code class="text-jq-color">
+$("td").find(".notes")
+</code>
+                        </div>
+                        <div class="w-full  md:w-1/5  mb-4 pb-4 md:border-b md:border-grey">
+                            <p class="text-dojo-color text-lg text-left pb-4 block md:hidden">dojo 1.7</p>
+<code class="text-dojo-color">
+dojo.query("td.notes")
+</code>
+                        </div>
+                        <div class="w-full  md:w-1/3  mb-4 pb-4 md:border-b md:border-grey text-left notes">
+                            <p class="text-lg text-left mt-0 pb-4 block md:hidden">Notes</p>
+                            <p>Gets all the <em>td</em> elements with class notes.</p>
+                        </div>
+                    </div>
+                </section>
+                <section>
+                    <div class="flex flex-wrap pt-10 text-center md:text-left">
+                        <div class="w-full  md:w-1/4  mb-4  pb-2 md:text-left border-b border-grey">
+                            Pseudo class selectors
+                        </div>
+                        <div class="w-full  md:w-1/5  mb-4 pb-4 md:border-b md:border-grey">
+                            <p class="text-jq-color text-lg text-left pb-4 block md:hidden">jQuery 2.1</p>
+                            
+<code class="text-jq-color">
+$(".container:first-child")
+</code>
+                        </div>
+                        <div class="w-full  md:w-1/5  mb-4 pb-4 md:border-b md:border-grey">
+                            <p class="text-dojo-color text-lg text-left pb-4 block md:hidden">dojo 1.7</p>
+<code class="text-dojo-color">
+dojo.query(".container:first-child")
+</code>
+                        </div>
+                        <div class="w-full  md:w-1/3  mb-4 pb-4 md:border-b md:border-grey text-left notes">
+                            <p class="text-lg text-left mt-0 pb-4 block md:hidden">Notes</p>
+                            <p>Get the elements filtered through pseudo classes.</p>
+                        </div>
+                    </div>
+                </section>
+                <section>
+                    <div class="flex flex-wrap pt-10 text-center md:text-left">
+                        <div class="w-full  md:w-1/4  mb-4  pb-2 md:text-left border-b border-grey">
+                            Creates a new DOM element
+                        </div>
+                        <div class="w-full  md:w-1/5  mb-4 pb-4 md:border-b md:border-grey">
+                            <p class="text-jq-color text-lg text-left pb-4 block md:hidden">jQuery 2.1</p>
+                            
+<code class="text-jq-color">
+$("&lt;<span class="hidden">\</span>div/&gt;")
+</code>
+                        </div>
+                        <div class="w-full  md:w-1/5  mb-4 pb-4 md:border-b md:border-grey">
+                            <p class="text-dojo-color text-lg text-left pb-4 block md:hidden">dojo 1.7</p>
+<code class="text-dojo-color">
+dojo.create("div")
+</code>
+                        </div>
+                        <div class="w-full  md:w-1/3  mb-4 pb-4 md:border-b md:border-grey text-left notes">
+                            <p class="text-lg text-left mt-0 pb-4 block md:hidden">Notes</p>
+                            <p>Usage:</p>
+                            <p class="text-jq-color">jQuery</p>
+<pre><code class="text-jq-color">
+    var e = $("&lt;<span class="hidden">\</span>div/&gt;").attr("id","last");
+    $("body").append(e);
+</code></pre>
+                            <p class="text-dojo-color mt-5">dojo</p>
+<pre><code class="text-dojo-color">
+    dojo.create("div",{"id":"last"},dojo.body());
+</code></pre>
+                        </div>
+                    </div>
+                </section>
+                <section>
+                    <div class="flex flex-wrap pt-10 text-center md:text-left">
+                        <div class="w-full  md:w-1/4  mb-4  pb-2 md:text-left border-b border-grey">
+                            Get inner HTML of the element
+                        </div>
+                        <div class="w-full  md:w-1/5  mb-4 pb-4 md:border-b md:border-grey">
+                            <p class="text-jq-color text-lg text-left pb-4 block md:hidden">jQuery 2.1</p>
+                            
+<code class="text-jq-color">
+$("#bar".html())
+</code>
+                        </div>
+                        <div class="w-full  md:w-1/5  mb-4 pb-4 md:border-b md:border-grey">
+                            <p class="text-dojo-color text-lg text-left pb-4 block md:hidden">dojo 1.7</p>
+<code class="text-dojo-color">
+    dojo.byId("bar").innerHTML
+</code>
+                        </div>
+                        <div class="w-full  md:w-1/3  mb-4 pb-4 md:border-b md:border-grey text-left notes">
+                            <p class="text-lg text-left mt-0 pb-4 block md:hidden">Notes</p>
+                            <p>Even setting the innerHTML is pretty much same</p>
+                            <p class="text-jq-color">jQuery</p>
+<code class="text-jq-color">
+    $("#bar").html("Hola")
+</code>
+                            <p class="text-dojo-color mt-5">dojo</p>
+<code class="text-dojo-color">
+    dojo.byId("bar").innerHTML = "Hola"
+</code>
+                        </div>
+                    </div>
+                </section>
+                <section>
+                        <div class="flex flex-wrap pt-10 text-center md:text-left">
+                            <div class="w-full  md:w-1/4  mb-4  pb-2 md:text-left border-b border-grey">
+                                Value of an element
+                            </div>
+                            <div class="w-full  md:w-1/5  mb-4 pb-4 md:border-b md:border-grey">
+                                <p class="text-jq-color text-lg text-left pb-4 block md:hidden">jQuery 2.1</p>
+                                
+    <code class="text-jq-color">
+        $("select:first").val()
+    </code>
+                            </div>
+                            <div class="w-full  md:w-1/5  mb-4 pb-4 md:border-b md:border-grey">
+                                <p class="text-dojo-color text-lg text-left pb-4 block md:hidden">dojo 1.7</p>
+    <code class="text-dojo-color">
+        dojo.query("select")[0].value
+    </code>
+                            </div>
+                            <div class="w-full  md:w-1/3  mb-4 pb-4 md:border-b md:border-grey text-left notes">
+                                <p class="text-lg text-left mt-0 pb-4 block md:hidden">Notes</p>
+                                <p>Set the value the same way</p>
+                                <p class="text-jq-color">jQuery</p>
+    <code class="text-jq-color">
+        $("select:first").val("Here is the first option")
+    </code>
+                                <p class="text-dojo-color mt-5">dojo</p>
+    <code class="text-dojo-color">
+        dojo.query("select")[0].value = "Here is the first option"
+    </code>
+                            </div>
+                        </div>
+                </section>
+                <section>
+                        <div class="flex flex-wrap pt-10 text-center md:text-left">
+                            <div class="w-full  md:w-1/4  mb-4  pb-2 md:text-left border-b border-grey">
+                                Attribute values
+                            </div>
+                            <div class="w-full  md:w-1/5  mb-4 pb-4 md:border-b md:border-grey">
+                                <p class="text-jq-color text-lg text-left pb-4 block md:hidden">jQuery 2.1</p>
+<pre><code class="text-jq-color">
+$(".active a")
+    .attr("href") //get
+$(".active a")
+    .attr("href", "javascript:void(0);") //set
+</code></pre>
+                            </div>
+                            <div class="w-full  md:w-1/5  mb-4 pb-4 md:border-b md:border-grey">
+                                <p class="text-dojo-color text-lg text-left pb-4 block md:hidden">dojo 1.7</p>
+<pre><code class="text-dojo-color">
+dojo.query(".active a")
+    .attr("href") //get
+dojo.query(".active a")
+    .attr("href", "javascript:void(0);") //set
+</code></pre>
+                            </div>
+                            <div class="w-full  md:w-1/3  mb-4 pb-4 md:border-b md:border-grey text-left notes">
+                                <p class="text-lg text-left mt-0 pb-4 block md:hidden">Notes</p>
+                                <p>Get and set attribute values</p>
+                            </div>
+                        </div>
+                </section>
+                <section>
+                        <div class="flex flex-wrap pt-10 text-center md:text-left">
+                            <div class="w-full  md:w-1/4  mb-4  pb-2 md:text-left border-b border-grey">
+                                Trim
+                            </div>
+                            <div class="w-full  md:w-1/5  mb-4 pb-4 md:border-b md:border-grey">
+                                <p class="text-jq-color text-lg text-left pb-4 block md:hidden">jQuery 2.1</p>
+                                
+    <code class="text-jq-color">
+        $.trim(" foo ")
+    </code>
+                            </div>
+                            <div class="w-full  md:w-1/5  mb-4 pb-4 md:border-b md:border-grey">
+                                <p class="text-dojo-color text-lg text-left pb-4 block md:hidden">dojo 1.7</p>
+    <code class="text-dojo-color">
+        dojo.trim(" foo ")
+    </code>
+                            </div>
+                            <div class="w-full  md:w-1/3  mb-4 pb-4 md:border-b md:border-grey text-left notes">
+                                <p class="text-lg text-left mt-0 pb-4 block md:hidden">Notes</p>
+                                <p>Trim strings. Examples will return <em>foo</em></p>
+                            </div>
+                        </div>
+                </section>
+                <section>
+                        <div class="flex flex-wrap pt-10 text-center md:text-left">
+                            <div class="w-full  md:w-1/4  mb-4  pb-2 md:text-left border-b border-grey">
+                                Create and append elements
+                            </div>
+                            <div class="w-full  md:w-1/5  mb-4 pb-4 md:border-b md:border-grey">
+                                <p class="text-jq-color text-lg text-left pb-4 block md:hidden">jQuery 2.1</p>
+                                
+    <code class="text-jq-color">
+        $("body").append('&lt;<span class="hide">\</span>a href="/foo"&gt;Foo&lt;<span class="hide">\</span>/a&gt;')
+    </code>
+                            </div>
+                            <div class="w-full  md:w-1/5  mb-4 pb-4 md:border-b md:border-grey">
+                                <p class="text-dojo-color text-lg text-left pb-4 block md:hidden">dojo 1.7</p>
+    <code class="text-dojo-color">
+        dojo.create("a", { href: "/foo", innerHTML: "Foo" }, dojo.body());
+    </code>
+                            </div>
+                            <div class="w-full  md:w-1/3  mb-4 pb-4 md:border-b md:border-grey text-left notes">
+                                <p class="text-lg text-left mt-0 pb-4 block md:hidden">Notes</p>
+                                <p>Creates an HTML element and appends to the given node</p>
+                            </div>
+                        </div>
+                </section>
+                <section>
+                        <div class="flex flex-wrap pt-10 text-center md:text-left">
+                            <div class="w-full  md:w-1/4  mb-4  pb-2 md:text-left border-b border-grey">
+                                Remove an element
+                            </div>
+                            <div class="w-full  md:w-1/5  mb-4 pb-4 md:border-b md:border-grey">
+                                <p class="text-jq-color text-lg text-left pb-4 block md:hidden">jQuery 2.1</p>
+                                
+    <code class="text-jq-color">
+        $("#foo").remove()
+    </code>
+                            </div>
+                            <div class="w-full  md:w-1/5  mb-4 pb-4 md:border-b md:border-grey">
+                                <p class="text-dojo-color text-lg text-left pb-4 block md:hidden">dojo 1.7</p>
+    <code class="text-dojo-color">
+        dojo.destroy("foo");
+    </code>
+                            </div>
+                            <div class="w-full  md:w-1/3  mb-4 pb-4 md:border-b md:border-grey text-left notes">
+                                <p class="text-lg text-left mt-0 pb-4 block md:hidden">Notes</p>
+                                <p>Remove the element as per the selector</p>
+                            </div>
+                        </div>
+                </section>
+                <section>
+                        <div class="flex flex-wrap pt-10 text-center md:text-left">
+                            <div class="w-full  md:w-1/4  mb-4  pb-2 md:text-left border-b border-grey">
+                                Find all the child elements
+                            </div>
+                            <div class="w-full  md:w-1/5  mb-4 pb-4 md:border-b md:border-grey">
+                                <p class="text-jq-color text-lg text-left pb-4 block md:hidden">jQuery 2.1</p>
+                                
+    <code class="text-jq-color">
+        $(body).children();
+    </code>
+                            </div>
+                            <div class="w-full  md:w-1/5  mb-4 pb-4 md:border-b md:border-grey">
+                                <p class="text-dojo-color text-lg text-left pb-4 block md:hidden">dojo 1.7</p>
+    <code class="text-dojo-color">
+        dojo.query("body > *")
+    </code>
+                            </div>
+                            <div class="w-full  md:w-1/3  mb-4 pb-4 md:border-b md:border-grey text-left notes">
+                                <p class="text-lg text-left mt-0 pb-4 block md:hidden">Notes</p>
+                                <p>Can use selectors to filter results eg.:</p>
+                                <p class="text-jq-color">jQuery</p>
+    <code class="text-jq-color">
+            $("body").children("div")
+    </code>
+                                <p class="text-dojo-color mt-5">dojo</p>
+    <code class="text-dojo-color">
+            dojo.query("body > div")
+    </code>
+                            </div>
+                        </div>
+                </section>
+            </section>
+            <section class="mt-10">
+                    <h4 class="text-xl font-medium">Events
+                    </h4>
+                    <section>
+                            <div class="flex-wrap pt-10 text-center md:text-left md:border-b md:border-grey hidden md:flex">
+                                    <div class="w-full  md:w-1/6">
+                                        
+                                    </div>
+                                    <div class="w-full  md:w-1/4  mb-2 ">
+                                        <p class="text-jq-color text-lg text-left ">jQuery 2.1</p>
+                                        
+                                    </div>
+                                    <div class="w-full  md:w-1/3  mb-2 ">
+                                        <p class="text-dojo-color text-lg text-left ">dojo 1.7</p>
+                                    </div>
+                                    <div class="w-full  md:w-1/4  mb-2">
+                                        <p class="text-lg text-left mt-0 ">Notes</p>
+                                    </div>    
+                            </div>        
+                    <div class="flex flex-wrap pt-10 text-center md:text-left">
+                        <div class="w-full  md:w-1/6  mb-4  pb-2 md:text-left border-b border-grey">
+                            Event Binding	
+                        </div>
+                        <div class="w-full  md:w-1/4  mb-4 pb-4 md:border-b md:border-grey">
+                            <p class="text-jq-color text-lg text-left pb-4 block md:hidden">jQuery 2.1</p>
+<pre><code class="text-jq-color">
+$("#foo"). bind("click", 
+    function(){ // do something }
+)
+</code></pre>
+                        </div>
+                        <div class="w-full  md:w-1/3  mb-4 pb-4 md:border-b md:border-grey">
+                            <p class="text-dojo-color text-lg text-left pb-4 block md:hidden">dojo 1.7</p>
+<pre><code class="text-dojo-color">
+dojo.connect(dojo.byId("foo"),"onclick",this,function(){ 
+        // do something 
+    })
+</code></pre>
+                        </div>
+                        <div class="w-full  md:w-1/4  mb-4 pb-4 md:border-b md:border-grey text-left notes">
+                            <p class="text-lg text-left mt-0 pb-4 block md:hidden">Notes</p>
+                                    <p class="md:mt-5">
+                                        The third parameter in <code class="text-dojo-color">dojo.connect</code> is the scope in which the following method should be executed.
+                                        Most of all the events can be bound this way.
+                                    </p>
+                                    
+                                
+                        </div>
+                    </div>
+                    </section>
+                    <section>
+                            <div class="flex flex-wrap pt-10 text-center md:text-left">
+                                <div class="w-full  md:w-1/6  mb-4  pb-2 md:text-left border-b border-grey">
+                                    Unbind Events	
+                                </div>
+                                <div class="w-full  md:w-1/4  mb-4 pb-4 md:border-b md:border-grey">
+                                    <p class="text-jq-color text-lg text-left pb-4 block md:hidden">jQuery 2.1</p>
+                                    
+<pre><code class="text-jq-color">
+    $("#foo").unbind()
+</code></pre>
+                                </div>
+                                <div class="w-full  md:w-1/3  mb-4 pb-4 md:border-b md:border-grey">
+                                    <p class="text-dojo-color text-lg text-left pb-4 block md:hidden">dojo 1.7</p>
+<pre><code class="text-dojo-color">
+var con = dojo.connect( dojo.byId("foo"),"onclick",this, 
+            function(){ 
+                // do something
+        }));
+
+dojo.disconnect(con);
+</code></pre>
+                                </div>
+                                <div class="w-full  md:w-1/4  mb-4 pb-4 md:border-b md:border-grey text-left notes">
+                                    <p class="text-lg text-left mt-0 pb-4 block md:hidden">Notes</p>
+                                    <p class="md:mt-5">In dojo you have to assign the <code class="text-dojo-color">dojo.connect</code> to a variable and pass to <code class="text-dojo-color">dojo.disconnect</code> to unbind the event.</p>
+                                    
+                                </div>
+                            </div>
+                    </section>
+            </section>
+           
+        </section>
+        
+    </main>
+  
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+  <script>window.jQuery || document.write('<script src="js/vendor/jquery-3.3.1.min.js"><\/script>')</script>
+    <script src="js/main.js"></script>
+
+  <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
+  <script>
+    window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;
+    ga('create', 'UA-XXXXX-Y', 'auto'); ga('send', 'pageview')
+  </script>
+  <script src="https://www.google-analytics.com/analytics.js" async defer></script>
+</body>
+
+</html>
